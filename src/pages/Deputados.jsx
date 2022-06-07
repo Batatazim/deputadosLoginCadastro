@@ -22,7 +22,7 @@ const Deputados = () => {
     const pesquisarDeputados = async (event) => {
         getDeputadoid(event.target.value).then(response => setDeputados(response))
     }
-   
+  
   return (
     <div style={{ marginTop: "120px" }}>
             <Card className='mt-5 mb-5'>         
@@ -36,7 +36,7 @@ const Deputados = () => {
             <Card className='bg-dark text-light align-items-center p-2 m-2'>
                 <h1>Todos os Deputados</h1>
             </Card>
-            { !deputados.length && <h1>Carregando... Aguarde</h1>}
+            {!deputados.length && <h1>Carregando... Aguarde</h1>}
             <Card className='p-2 m-2 bg-light'>
                 <Row xs={1} md={2} xl={3} className="g-4">
                 {deputados.map(item => (

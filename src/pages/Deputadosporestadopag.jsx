@@ -19,8 +19,7 @@ const Deputados = () => {
             setDeputados(resultado.data.dados)
         })
     }, [])
-
-   
+ 
   return (
     <div style={{ marginTop: "120px" }}>
         

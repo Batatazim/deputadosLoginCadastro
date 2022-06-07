@@ -9,7 +9,7 @@ const Estados = () => {
     const [estados, setEstados] = useState([])
 
     useEffect(() => {
-        apiDeputados.get('deputados?').then(resultado => {
+        apiDeputados.get('deputados?' && '/referencias/uf').then(resultado => {
             console.log(resultado.data)
             setEstados(resultado.data.dados)
         })
@@ -20,12 +20,12 @@ const Estados = () => {
             <Card className='bg-dark text-light align-items-center p-2 m-2'>
                 <h1>Todos os Estados</h1>
             </Card>
-            <Card className='p-2 bg-light'>
+            <Card>
                 <Row className='m-2'>
-                {estados.slice(0,27).map(item => (
+                {estados.map(item => (
                      <Col>
-                     <Card className='bg-dark align-items-center my-2'>
-                     <Link className='btn btn-dark' style={{ width: '100px'}} to={'/deputadosporestadopag/'+item.siglaUf}>{item.siglaUf}</Link>
+                     <Card>
+                     <Link className='btn btn-dark' style={{ width: '67px'}} to={'/deputadosporestadopag/'+item.sigla}>{item.sigla}</Link>
                      </Card>
                      </Col>
                 ))}

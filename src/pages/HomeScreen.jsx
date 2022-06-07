@@ -19,7 +19,7 @@ const HomeScreen = () => {
     }, [])
 
     useEffect(() => {
-        apiDeputados.get('deputados?').then(resultado => {
+        apiDeputados.get('deputados?' && '/referencias/uf').then(resultado => {
             console.log(resultado.data)
             setEstados(resultado.data.dados)
         })
@@ -42,7 +42,7 @@ const HomeScreen = () => {
                             {estados.slice(0,9).map(item => (
                                 <Col >
                                     <Card className='bg-light align-items-center my-2'>
-                                    <h5><Link className="btn btn-light w-100" to={'/deputadosporestadopag/'+item.siglaUf}>{item.siglaUf}</Link></h5>
+                                    <h5><Link className="btn btn-light w-100" to={'/deputadosporestadopag/'+item.sigla}>{item.sigla}</Link></h5>
                                     </Card>
                                 </Col>
                             ))}
